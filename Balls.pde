@@ -21,6 +21,7 @@ class Balls {
   }
 
   void display() {
+    fill(0);
     ellipse(location.x, location.y, mass*10, mass*10);
     
     if (location.y > height-mass*5+5){

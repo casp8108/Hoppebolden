@@ -1,10 +1,10 @@
-Balls[] ball = new Balls[100];
+Balls[] ball = new Balls[10];
 PVector wind = new PVector();
 
 void setup() {
-  size(1200, 800);
+  size(1300, 800);
   for (int i = 0; i < ball.length; i++) {
-    ball[i] = new Balls(random(0.5, 5), 26, 26);
+    ball[i] = new Balls(i/2,i*100,100);
   }
 }
 
@@ -17,6 +17,13 @@ void draw() {
     ball[i].update();
     ball[i].display();
   }
+  Ground();
+}
+
+void Ground(){
+  fill(10,250,10);
+  noStroke();
+  triangle(width,height-width/10,0,height,width,height);
 }
 void keyPressed() {
   if (key == 'w') {
